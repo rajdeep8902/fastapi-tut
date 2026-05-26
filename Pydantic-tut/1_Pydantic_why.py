@@ -11,7 +11,7 @@ class Patient(BaseModel):
     
 patient_info = {
     "name": "Nitish",  
-    "age": -30,
+    "age": 30,
     "weight": 75.2,
     # "allergies": ["pollen", "dust"],
     "email": "abc@gmail.com",
@@ -22,6 +22,6 @@ patient1= Patient(**patient_info)
 def insert_patient(patient: Patient):
     print(patient.name)
     print(patient.age)
-    print(patient1.email)
+    print(patient.email)
 
 insert_patient(patient1)
