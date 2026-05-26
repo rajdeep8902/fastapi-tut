@@ -5,7 +5,7 @@ class Patient(BaseModel):
     name: str
     age: int = Field(gt=0, lt=200)
     weight: float
-    allergies: Optional[List[str]] = None
+    allergies: Annotated[Optional[List[str]], Field(default=None, max_length=5)]
     email: EmailStr
     linkedin_url: Annotated[AnyUrl, Field(max_length=50, title="LinkedIn profile of the patient", description="Provide linkedIn profile of the patient", examples=["https://linkedin.com/1322"])]
     
