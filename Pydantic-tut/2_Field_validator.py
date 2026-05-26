@@ -21,11 +21,19 @@ class Patient(BaseModel):
     @classmethod
     def transform_name(cls, val):
         return val.capitalize()
+    
+    @field_validator("age", mode="before")
+    @classmethod
+    def validate_age(cls, val):
+        if 0 < val < 100:
+            return val
+        else:
+            raise ValueError("Age should be between 0 and 100")
         
    
 patient_info = {
     "name": "nitish",  
-    "age": 30,
+    "age": "30",
     "weight": 75.2,
     "allergies": ["pollen", "dust"],
     "email": "abc@icici.com"
