@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, AnyUrl, Field
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Annotated
 
 class Patient(BaseModel):
     name: str
@@ -7,7 +7,7 @@ class Patient(BaseModel):
     weight: float
     allergies: Optional[List[str]] = None
     email: EmailStr
-    linkedin_url: AnyUrl
+    linkedin_url: Annotated[AnyUrl, Field(max_length=50, title="LinkedIn profile of the patient", description="Provide linkedIn profile of the patient", examples=["https://linkedin.com/1322"])]
     
 patient_info = {
     "name": "Nitish",  
