@@ -48,16 +48,6 @@
         "bmi": 31.22,
         "verdict": "Obese"
     },
-    "P007": {
-        "name": "Rajdeep Biswas",
-        "city": "Thakurnagar",
-        "age": 22,
-        "gender": "Male",
-        "height": 160.0,
-        "weight": 60.0,
-        "bmi": 23.44,
-        "verdict": "Normal"
-    },
     "P006": {
         "name": "Mira Biswas",
         "city": "Thakurnagar",
